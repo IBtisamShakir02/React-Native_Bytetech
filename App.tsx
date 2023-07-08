@@ -6,10 +6,13 @@ import CounterScreen from './src/CounterScreen';
 import ListScreen from './src/ListScreen';
 import BottomNavigation from './src/Components/BottomNav';
 const Stack = createNativeStackNavigator();
+import { Provider } from 'react-redux';
+import { store } from './src/store/store';
 
 // create a component
 const App = () => {
   return (
+    <Provider store={store}>
   <NavigationContainer>
     <Stack.Navigator>
     <Stack.Screen
@@ -35,6 +38,7 @@ const App = () => {
         />
     </Stack.Navigator>
   </NavigationContainer>
+  </Provider>
   );
 };
 
